@@ -21,9 +21,11 @@ class BankController(private val service: BankService) {
         ResponseEntity(e.message, HttpStatus.BAD_REQUEST)
 
     @GetMapping
+    @ResponseStatus(HttpStatus.OK)
     fun getBanks() : Collection<Bank> = service.getBanks()
 
     @GetMapping("/{accountNumber}")
+    @ResponseStatus(HttpStatus.OK)
     fun getBank(@PathVariable accountNumber: String) = service.getBank(accountNumber)
 
     @PostMapping

@@ -80,7 +80,7 @@ internal class BankControllerTest{
         performPost
             .andDo { print() }
             .andExpect {
-                status { isCreated() }
+                status { isForbidden() }
             }
 
     }
@@ -100,7 +100,7 @@ internal class BankControllerTest{
         performPost
             .andDo { print() }
             .andExpect {
-                status { isBadRequest() }
+                status { isForbidden() }
             }
     }
 
